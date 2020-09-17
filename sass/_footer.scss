@@ -1,0 +1,131 @@
+.footer{      
+    position: relative;
+    font-family: "OpenSans", sans-serif;
+    padding-top: 10 * $point;  
+    padding-bottom: 8 * $point;
+    width: 100%;
+   // background-color: #efefef;
+    background-color: rgba(122,122,122,0.7);
+    height: auto;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    display: inline-block;
+
+    @media (max-width: $phone) { 
+        padding-top: 2 * $point;
+        padding-bottom: 3 * $point;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        @extend .transition;
+        &:hover { 
+            color: darken(#828282, 20)
+        }
+    }
+
+    &-title { 
+        margin: 2 * $point 0;
+    }
+
+    &-line {
+        width: 100%;
+        margin: auto;
+        background-color: #fff;
+        height: 1px;
+        display: none;
+        border: 0;
+
+        @media (max-width: $phone) {
+            display: block;
+        }
+    }
+
+    .contacts{
+        display:flex;
+        width: 100%;
+    }
+
+    .social-media{
+        margin-top: 10 * $point;
+        margin-bottom: 10 * $point;
+        width:25%;
+        a{
+            img{
+                margin: 2*$point;
+                width: 33%;
+                max-height: 150px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto
+            }
+        }
+    }
+    &-form {
+        width:75%;
+        align:right;
+        margin-top: 10 * $point;
+        margin-bottom: 10 * $point;
+
+        @media (max-width: $phone) {
+            margin-top: 1 * $point;
+            margin-bottom: 3 * $point;
+        }
+    }
+    &-input {
+        font-family: "OpenSans", sans-serif;
+        padding: 12px 15px;
+        margin-top: 10px;
+        border-radius: 6px;
+        border: solid 1px #e4e4e4;
+        background-color: #ffffff;
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: normal;  
+        color: #828282;
+        @extend .transition;
+
+        @media (max-width: $phone) { 
+            padding: 5px 12px;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        &[type="submit"] {
+            cursor: pointer;
+            box-shadow: 0 10px 0px -20px #000;
+            &:hover { 
+                box-shadow: 0 10px 40px -20px #000;
+            
+            }
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }   
+    textarea{ 
+        &.footer-input {
+            height: 144px;
+            resize: vertical;
+        }
+    }
+    &-bottom { 
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media (max-width: $phone) { 
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+
+            & > * { 
+                margin-top: 24px;
+            }
+        }
+    }
+}

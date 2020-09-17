@@ -1,0 +1,23 @@
+.aboutme{
+    height: auto;
+    display: inline-block;
+    //background-color: rgba(122,122,122,0.3);
+
+    p{
+        color: rgb(228, 228, 228);
+    }
+    
+    &-img-container{
+        width: 45%;
+        float:left;
+        img{
+            float: right;
+            width: 50%;
+        }
+    }
+
+    p{
+        float: right;
+        width: 45%
+    }
+}

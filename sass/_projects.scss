@@ -1,0 +1,90 @@
+.projects{
+    position: relative;
+    //height: 250px;
+
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        .project{
+            background-color: rgba(200,200,200,0.8);
+            width:50%;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            display:
+
+            &-h3{
+                color: ivory;
+                margin: auto;
+                font-size: 28px;
+                color: ivory;
+            }
+            a{
+                text-align: center;
+                margin: auto;
+                color: ivory;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            a:hover{
+                color:black;
+            }
+        }
+
+        @media (max-width: $phone) {
+            .project{
+                height: 130px;
+            }
+        }
+
+        .left-arrow{
+            width: 0;
+            height: 0;
+            border-top: 70px solid transparent;
+            border-bottom: 70px solid transparent;
+            border-right: 121px solid #888888;
+            margin: 30px auto 0;
+            cursor: pointer;
+
+            @media (max-width: $phone) {
+                border-top: 35px solid transparent;
+                border-bottom: 35px solid transparent;
+                border-right: 60px solid #888888;
+            }
+        }
+        .left-arrow:hover{
+            border-right: 121px solid #BBBBBB;
+            @media (max-width: $phone) {
+                border-top: 35px solid transparent;
+                border-bottom: 35px solid transparent;
+                border-right: 60px solid #BBBBBB;
+            }
+        }
+        .right-arrow{
+            width: 0;
+            height: 0;
+            border-top: 70px solid transparent;
+            border-bottom: 70px solid transparent;
+            border-left: 121px solid #888888;
+            margin: 30px auto 0;
+            cursor: pointer;
+
+            @media (max-width: $phone) {
+                border-top: 35px solid transparent;
+                border-bottom: 35px solid transparent;
+                border-left: 60px solid #888888;
+            }
+        }
+        .right-arrow:hover{
+            border-left: 121px solid #BBBBBB;
+
+            @media (max-width: $phone) {
+                border-top: 35px solid transparent;
+                border-bottom: 35px solid transparent;
+                border-left: 60px solid #BBBBBB;
+            }
+        }
+    }
+}

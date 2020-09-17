@@ -1,0 +1,114 @@
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: -2.5 * $point;
+    
+    &.swiper-wrapper {
+        flex-wrap: nowrap;
+    }
+
+    @media (max-width: $small-phone) {
+        margin: 0;
+    }
+
+    & &-container { 
+        margin: 0;
+        img { 
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        &.mouse-hover.top,
+        &.mouse-hover.right,
+        &.mouse-hover.bottom,
+        &.mouse-hover.left { 
+            .gallery-overlap {
+                &, &:before{ display: block; }
+
+                img {
+                    position: relative;
+                    opacity: 0;
+                    animation-name: showElement;
+                    animation-duration: .3s;
+                    animation-delay: .3s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: 1;
+                }
+            }
+        }
+        &.mouse-hover.leaved-top,
+        &.mouse-hover.leaved-right,
+        &.mouse-hover.leaved-bottom,
+        &.mouse-hover.leaved-left { 
+            .gallery-overlap {
+
+                img {
+                    animation-name: hideElement;
+                    animation-duration: .3s;
+                    animation-delay: 0s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: 1;
+                }
+            }
+        }
+
+    }
+    & &-image{
+        width: 33.3333%;
+        max-width: 33.3333%;
+        height: auto;
+        position: relative;
+        padding: 2.5 * $point; 
+
+        @media (max-width: $phone) {
+            width: 50%;
+            max-width: 50%;
+        }
+
+        @media (max-width: $small-phone) {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    & &-overlap{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 2;                    
+        @extend .transition;
+        & { display: none; }
+
+        img{
+            width: 100%;
+        }
+    }
+    & &-image:hover {
+        & .image-overlap{
+            opacity: 1;
+            height: auto;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes showElement {
+    from {top: -1rem; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+@keyframes hideElement {
+    from {top: 0; opacity: 1;}
+    to {top: -1rem; opacity: 0;}
+}
+
+.swiper-container {
+    @media (max-width: $phone) {
+        width: calc(100% + #{$container-padding * 2}) !important;
+        margin-left: -$container-padding !important;
+    }
+}

@@ -1,0 +1,218 @@
+@font-face {
+    font-family: Arimo;
+    src: url(fonts/Arimo/Arimo-Regular.ttf);
+}
+@font-face {
+    font-family: OpenSans;
+    src: url(fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+*, *:after, *:before { 
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    margin: 0; 
+    padding: $navbar-height 0 0 0;
+    overflow-x: hidden;
+    background-image: url("../img/static/1.jpg");
+
+    @media (max-width: $phone) {
+        padding: $navbar-height-mobile 0 0 0;
+    }
+}
+
+.hide{
+    display: none !important;
+}
+
+.transition {
+    transition: .3s ease-in-out;
+}
+
+.container{
+    width: $container-width;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Arimo", sans-serif;
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+
+    @media (max-width: $phone) { 
+        font-size: 18px;
+        line-height: 16px;
+    }
+}  
+
+.mouse-hover {
+    position: relative;
+    overflow: hidden;
+
+    &:before { 
+        content: '';
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: .3s ease-in-out;
+        opacity: 0;
+    } 
+
+    &:hover { 
+        &.left { 
+            &:before {
+                // left: 0;
+                animation-name: fromleft;
+                animation-duration: .3s;
+                animation-delay: 0s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+        }
+        &.right { 
+            &:before {
+                // right: 0;
+                animation-name: fromright;
+                animation-duration: .3s;
+                animation-delay: 0s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+        }
+        &.bottom { 
+            &:before {
+                // bottom: 0;
+                animation-name: frombottom;
+                animation-duration: .3s;
+                animation-delay: 0s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+        }
+        &.top { 
+            &:before {
+                // top: 0;
+                animation-name: fromtop;
+                animation-duration: .3s;
+                animation-delay: 0s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+        }
+    }
+
+    &.leaved-left {
+        &:before {
+            // left: -200%;
+            animation-name: toleft;
+            animation-duration: .3s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        }
+    }
+    &.leaved-right {
+        &:before {
+            // right: -200%;
+            animation-name: toright;
+            animation-duration: .3s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        }
+    }
+    &.leaved-bottom {
+        &:before {
+            // bottom: -200%;
+            animation-name: tobottom;
+            animation-duration: .3s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        }
+    }
+    &.leaved-top {
+        &:before {
+            // top: -200%;
+            animation-name: totop;
+            animation-duration: .3s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        }
+    }
+
+}
+
+.empty-row { 
+    &-mobile {
+        display: none;
+        @media (max-width: $phone) {
+            display: block;
+        }
+    }
+    &-tablet {
+        display: none;
+        @media (min-width: $phone + 1) and (max-width: $tablet) {
+            display: block;
+        }
+    }
+    &-dekstop {
+        display: none;
+        @media (min-width: $tablet + 1) {
+            display: block;
+        }
+    }
+}
+
+@keyframes fromleft {
+    from {left: -200%; opacity:0;}
+    to {left: 0; opacity:.5}
+}
+@keyframes toleft {
+    from {left: 0; opacity:.5}
+    to {left: -200%; opacity:0;}
+}
+
+@keyframes fromright {
+    from {right: -200%; opacity:0;}
+    to {right: 0; opacity:.5}
+}
+@keyframes toright {
+    from {right: 0; opacity:.5}
+    to {right: -200%; opacity:0;}
+}
+
+@keyframes fromtop {
+    from {top: -200%; opacity:0;}
+    to {top: 0; opacity:.5}
+}
+@keyframes totop {
+    from {top: 0; opacity:.5}
+    to {top: -200%; opacity:0;}
+}
+
+@keyframes frombottom {
+    from {bottom: -200%; opacity:0;}
+    to {bottom: 0; opacity:.5}
+}
+@keyframes tobottom {
+    from {bottom: 0; opacity:.5}
+    to {bottom: -200%; opacity:0;}
+}

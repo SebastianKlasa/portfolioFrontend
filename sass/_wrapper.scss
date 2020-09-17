@@ -1,0 +1,47 @@
+.wrapper{
+    margin: 0 auto;
+    padding-top: 4 * $point;
+    padding-bottom: 6 * $point;
+    width: 100%;
+    height: auto;
+
+    @media (max-width: $phone) { 
+        padding-top: 2 * $point;
+        padding-bottom: 4 * $point;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, span, a, img {
+        display: block;
+        margin-top: 6 * $point;
+        margin-bottom: 6 * $point;
+
+        @media (max-width: $phone) { 
+            margin-bottom: 2 * $point;
+        }
+    }
+
+    h1{
+        margin-top: 12 * $point;
+        color: rgb(228, 228, 228);
+    }
+
+    &-container{
+        background-color: rgba(122,122,122,0.3);
+    }
+
+    .non-margin{
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+    // &-container { 
+    //     & > img { 
+    //         @media (max-width: $phone) { 
+    //             position: relative;
+    //             width: calc(100% + #{$container-padding} * 2);
+    //             max-width: initial;
+    //             left: -$container-padding;
+    //         }
+    //     }
+    // }
+}

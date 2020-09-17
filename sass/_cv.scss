@@ -1,0 +1,29 @@
+.cv{
+    // background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    h1{
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .download{
+        border-radius: 50%;
+        width: 25%;
+        margin: auto;
+        transition: 1s;
+        img{
+            margin: 0 auto;
+            width: 25%;
+        }
+        h3{
+            color: snow;
+        }
+        a{
+            text-decoration: none;
+        }
+    }
+    .download:hover{
+        background-color: rgba(122,122,122,0.1);
+    }
+}

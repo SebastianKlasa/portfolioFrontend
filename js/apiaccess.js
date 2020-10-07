@@ -11,9 +11,9 @@ request.onload = function () {
   // Begin accessing JSON data here
     var data = JSON.parse(this.response)
 
-    data.forEach((movie) => {
+    data.forEach((proj) => {
     // Log each movie's title
-    console.log(movie.title)
+      console.log(proj.title)
     })
 }
 

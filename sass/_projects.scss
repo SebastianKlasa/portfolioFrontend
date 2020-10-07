@@ -27,6 +27,10 @@
                 color: ivory;
                 cursor: pointer;
                 text-decoration: none;
+                @media(max-width: $phone){
+                    line-height: 12px;
+                    font-size: 10px;
+                }
             }
             a:hover{
                 color:black;

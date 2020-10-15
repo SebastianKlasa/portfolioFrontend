@@ -1,7 +1,7 @@
 {
-  "name": "feelsky-films-marketing",
+  "name": "portfolio-frontend",
   "version": "1.0.0",
-  "description": "Feelsky Films Marketing Page",
+  "description": "Portfolio frontend",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
